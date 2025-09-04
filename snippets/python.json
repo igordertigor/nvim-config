@@ -1,0 +1,25 @@
+{
+  "debugpy": {
+    "prefix": "debugpy",
+    "body": [
+      "if os.getenv(\"DEBUGPY_ENABLED\"):",
+      "    import debugpy",
+      "    debugpy.listen((\"127.0.0.1\", 5678))",
+      "    print(\"debugpy listening on 127.0.0.1:5678\", flush=True)",
+      "    debugpy.wait_for_client()"
+    ],
+    "description": "Standard debugpy setup with environment variable"
+  },
+  "debugpy-pytest": {
+    "prefix": "debugpy-pytest",
+    "body": [
+      "@pytest.fixture",
+      "def debug():",
+      "    import debugpy",
+      "    debugpy.listen((\"127.0.0.1\", 5678))",
+      "    print(\"debugpy listening on 127.0.0.1:5678\", flush=True)",
+      "    debugpy.wait_for_client()"
+    ],
+    "description": "debugpy setup as pytest fixture"
+  }
+}
