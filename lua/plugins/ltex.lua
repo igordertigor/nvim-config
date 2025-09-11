@@ -11,7 +11,7 @@ return {
               setenceCacheSize = 2000,
               additionalRules = {
                 enablePickyRules = true,
-                motherTongue = "en-US",
+                motherTongue = "de-DE",
               },
             },
           },
