@@ -150,7 +150,7 @@ return {
           claude_code = function()
             return require("codecompanion.adapters").extend("claude_code", {
               env = {
-                ANTHROPIC_API_KEY = "ANTHROPIC_API_KEY"
+                ANTHROPIC_API_KEY = "cmd:op echo $ANTHROPIC_API_KEY"
               },
             })
           end,

@@ -90,3 +90,14 @@
 - `<leader>rf` extract to file
 - `<leader>rv` extract variable
 - `<leader>rI` inline function
+
+## Code companion
+
+- normal `ga` select agent
+- normal `gd` debug code companion (allows edits to chat)
+- normal `gp` pin context
+- normal `gw` watch context
+- normal `gD` super diff
+- normal `{` previous chat
+- normal `}` next chat
+- normal `gx` clear chat buffer
