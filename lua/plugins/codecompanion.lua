@@ -6,6 +6,7 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts={
+      log_level = "DEBUG",
       strategies = {
         chat = {
           adapter = os.getenv("CC_CHAT_ADAPTER") or "ollama",
@@ -18,13 +19,13 @@ return {
         }
       },
       adapters = {
-        -- anthropic = function()
-        --   return require("codecompanion.adapters").extend("anthropic", {
-        --     env = {
-        --       api_key = "ANTHROPIC_API_KEY",  -- reads from env var
-        --     },
-        --   })
-        -- end,
+        anthropic = function()
+          return require("codecompanion.adapters").extend("anthropic", {
+            env = {
+              api_key = "ANTHROPIC_API_KEY",  -- reads from env var
+            },
+          })
+        end,
         -- openai = function()
         --   return require("codecompanion.adapters").extend("openai", {
         --     env = {
@@ -144,15 +145,16 @@ return {
             },
           })
         end,
-        -- acp = {
-        --   claude_code = function()
-        --     return require("codecompanion.adapters").extend("claude_code", {
-        --       env = {
-        --         "ANTHROPIC_API_KEY"
-        --       },
-        --     })
-        --   end,
-        -- },
+
+        acp = {
+          claude_code = function()
+            return require("codecompanion.adapters").extend("claude_code", {
+              env = {
+                ANTHROPIC_API_KEY = "ANTHROPIC_API_KEY"
+              },
+            })
+          end,
+        },
       },
     },
   },
