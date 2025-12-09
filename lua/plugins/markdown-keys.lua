@@ -2,7 +2,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      -- TODO: Validate that the following can go 2025-12-09
+      -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
 
       -- Add custom markdown keybindings
       vim.api.nvim_create_autocmd("FileType", {
